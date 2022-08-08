@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { MdOutlineImageSearch } from 'react-icons/md';
 import { Formik } from 'formik';
-import { Header, SearchForm, Button, Span, Input } from './Searchbar.styled';
+import { Header, SearchForm, Button, Input } from './Searchbar.styled';
 import { Component } from 'react';
 
 
@@ -18,9 +18,7 @@ class Searchbar extends Component {
           <SearchForm >
             <Button type="submit">
               <MdOutlineImageSearch size={30} />
-              <Span>Search</Span>
             </Button>
-
             <Input
               name='q'
               type="text"
@@ -34,9 +32,9 @@ class Searchbar extends Component {
   }
 }
 
+
 Searchbar.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 }
-
 
 export default Searchbar

@@ -48,13 +48,13 @@ export class App extends Component {
           }
         }
         if (hits.length < 12) {
-          toast.info(`Sorry no more found images for "${q}"`);
+          toast.warning(`Sorry no more found images for "${q}"`);
         }
         this.setState({
           items: prevState.q !== q ? hits : [...prevState.items, ...hits],
         });
     } catch (error) {
-      toast.info('Last page'); 
+      toast.error('Last page'); 
     } finally {
       this.setState({ loading: false });
     }
@@ -108,7 +108,7 @@ export class App extends Component {
 
 
   render() {
-    const { items, isShowModal, largeImageURL, alt, loading, page, lastPage } =
+     const { items, isShowModal, largeImageURL, alt, loading, page, lastPage } =
       this.state;
 
     return (
@@ -117,7 +117,6 @@ export class App extends Component {
         <Box>
           {loading && (<ThreeDots color="#00BFFF" height={60} width={60} />)}
            <ToastContainer
-            position="top-center"
             autoClose={2000}
             theme='colored'
           />
