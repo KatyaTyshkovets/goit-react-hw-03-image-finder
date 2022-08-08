@@ -1,25 +1,42 @@
+import PropTypes from 'prop-types';
+import { MdOutlineImageSearch } from 'react-icons/md';
+import { Formik } from 'formik';
 import { Header, SearchForm, Button, Span, Input } from './Searchbar.styled';
+import { Component } from 'react';
 
 
-
- const Searchbar = () => {
+class Searchbar extends Component {
+ 
+  handleSubmit = ({q}, { resetForm }) => {
+    this.props.onSubmit(q);
+    resetForm();
+  };
+  render() {
     return (
-        <Header class="searchbar">
-  <SearchForm class="form">
-    <Button type="submit" class="button">
-      <Span class="button-label">Search</Span>
-    </Button>
+      <Header>
+        <Formik initialValues={{ q: '' }} onSubmit={this.handleSubmit}>
+          <SearchForm >
+            <Button type="submit">
+              <MdOutlineImageSearch size={30} />
+              <Span>Search</Span>
+            </Button>
 
-    <Input
-      class="input"
-      type="text"
-      autocomplete="off"
-      autofocus
-      placeholder="Search images and photos"
-    />
-  </SearchForm>
-</Header>
+            <Input
+              name='q'
+              type="text"
+              placeholder="Search images and photos"
+            />
+          </SearchForm>
+        </Formik>
+      </Header>
         
-     );
- }
+    );
+  }
+}
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+}
+
+
 export default Searchbar

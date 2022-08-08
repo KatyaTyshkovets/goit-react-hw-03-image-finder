@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Form,Field } from "formik";
 
 export  const Header = styled.header`
  top: 0;
@@ -19,7 +20,7 @@ export  const Header = styled.header`
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
 
-export const SearchForm = styled.form`
+export const SearchForm = styled(Form)`
  display: flex;
   align-items: center;
   width: 100%;
@@ -34,7 +35,6 @@ export const Button = styled.button`
   width: 48px;
   height: 48px;
   border: 0;
-  background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
   background-size: 40%;
   background-repeat: no-repeat;
   background-position: center;
@@ -59,7 +59,7 @@ position: absolute;
   border: 0;
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
 display: inline-block;
   width: 100%;
   font: inherit;
@@ -68,6 +68,7 @@ display: inline-block;
   outline: none;
   padding-left: 4px;
   padding-right: 4px;
+  
   &::placeholder {
   font: inherit;
   font-size: 18px;

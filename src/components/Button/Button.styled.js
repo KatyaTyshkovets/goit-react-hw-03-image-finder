@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoadMore = styled.button`
+ const Button = styled.button`
 
 padding: 8px 16px;
   border-radius: 2px;
@@ -25,3 +25,5 @@ padding: 8px 16px;
         background-color: #303f9f;
     };
 `;
+
+export default Button

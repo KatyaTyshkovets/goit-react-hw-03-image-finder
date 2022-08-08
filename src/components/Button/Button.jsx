@@ -1,7 +1,12 @@
-import { LoadMore } from "./Button.styled";
+import { Buton } from "./Button.styled";
 
-const Button = () => {
-    return <LoadMore>Load More</LoadMore>;
+
+const Button = ({loadMore}) => {
+    return <Buton onClick={loadMore}>Load More</Buton>;
 };
+
+
+
+
 
 export default Button
